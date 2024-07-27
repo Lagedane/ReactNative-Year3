@@ -1,5 +1,5 @@
-Date: 13-Jul-2024
+Date: 27-Jul-2024
 StudentID: 2213110162
 Name: Lada Watanadilogkul
 AKA: Lagedane
-ClassDetail: React Native Fundamentals
+ClassDetail: React Native Fundamental-Style, Flexbox / React Hook & State
