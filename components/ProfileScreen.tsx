@@ -5,13 +5,15 @@ import styles from "../styles/styles";
 const ProfileScreen = (): React.JSX.Element => {
   const profileImage = require("../assets/profileimage.jpg");
   const profileImage2 = require("../assets/profileimage2.jpg");
-  const [name, setName] = useState("Lada Watanadilogkul");
+  const defName = "Lada Watanadilogkul";
+  const nickName = "Gene";
+  const [name, setName] = useState(defName);
   const [profile, setProfile] = useState(profileImage);
   const handleChangeName = () => {
-    setName("Gene");
+    setName(name == defName ? nickName : defName);
   };
   const handleChangeImage = () => {
-    setProfile(profileImage2);
+    setProfile(profile == profileImage ? profileImage2 : profileImage);
   };
 
   return (
