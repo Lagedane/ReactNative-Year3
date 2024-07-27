@@ -12,8 +12,6 @@ export default StyleSheet.create({
     width: 100,
     height: 100,
     marginRight: 20,
-    borderWidth: 2,
-    borderColor: "#ff6699",
   },
   profileContainer: {
     flexDirection: "row",
@@ -24,6 +22,8 @@ export default StyleSheet.create({
     backgroundColor: "#ffffff",
     elevation: 5,
     marginTop: 30,
+    borderWidth: 1,
+    borderColor: "#ff6699",
   },
   profileName: {
     fontWeight: "700",
