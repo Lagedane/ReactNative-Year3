@@ -6,8 +6,8 @@ const Login = (): React.JSX.Element => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const handleSubmit = () => {
-    if(!name) {
-        Alert.alert("")
+    if(name=="") {
+        Alert.alert("Please Enter Name")
     }
   }
 
@@ -16,11 +16,13 @@ const Login = (): React.JSX.Element => {
       <TextInput
         style={stylesLogin.input}
         placeholder="Enter Name"
+        value={name}
         onChangeText={setName}
       />
       <TextInput
         style={stylesLogin.input}
         placeholder="Enter Email"
+        value={email}
         onChangeText={setEmail}
       />
       <Button title="SUBMIT" onPress={handleSubmit} color={"#ff6699"} />
