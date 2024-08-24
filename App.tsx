@@ -6,6 +6,10 @@ import Login from "./components/Login";
 import FlatListExample from "./components/FlatListExample";
 import FlatListcallBackend from "./components/FlatListcallBackend";
 import NewsApp from "./components/NewsApp";
+import AxiosgetData from "./components/AxiosgetData";
+import AxiospostData from "./components/AxiospostData";
+import WeatherLondon from "./components/WeatherLondon";
+import WeatherBangkok from "./components/WeatherBangkok";
 
 const App = (): React.JSX.Element => {
 
@@ -14,7 +18,11 @@ const App = (): React.JSX.Element => {
       {/* <ProfileScreen /> */}
       {/* <FlatListExample/> */}
       {/* <FlatListcallBackend/> */}
-      <NewsApp/>
+      {/* <NewsApp/> */}
+      {/* <AxiosgetData/> */}
+      {/* <AxiospostData/> */}
+      {/* <WeatherLondon/> */}
+      <WeatherBangkok/>
     </View>
   );
 };
