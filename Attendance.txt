@@ -1,5 +1,5 @@
-Date: 31-Aug-2024
+Date: 7-Sep-2024
 StudentID: 2213110162
 Name: Lada Watanadilogkul
 AKA: Lagedane
-ClassDetail: Stack Navigator, Icon Component, useNavigation, useLayoutEffect
+ClassDetail: Stack Navigator, Icon Component, useNavigation, useLayoutEffect, Drawer Navigator, React Native Elements, Wrap up Backend >> Postman, Navigation Lifecycle Hooks
