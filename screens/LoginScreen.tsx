@@ -42,7 +42,7 @@ const LoginScreen = (): React.JSX.Element => {
       let err: AxiosError<any> = error; // explicitly convert errors to AxiosError
       // status 401
       if (err.response?.status === 401) {
-        Toast.show({ type: "error", text1: err.response?.data.message });
+        Toast.show({ type: "error", text1: err.response.data.message });
         // console.log(err.response?.data.message);
       } else {
         Toast.show({
