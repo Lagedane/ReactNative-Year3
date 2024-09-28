@@ -3,14 +3,18 @@ import { Header, Icon, ListItem } from "@rneui/base";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import ProductScreen from "./ProductScreen";
+import { useAppSelector } from "../redux-toolkit/hooks";
+import { selectAuthState } from "../auth/auth-slice";
 
 const MenuScreen = ({ navigation }: any): React.JSX.Element => {
+  const { profile }= useAppSelector(selectAuthState);
+
   return (
     <View>
       <Header
         barStyle="default"
         centerComponent={{
-          text: "Thai-Nichi",
+          text: profile?"Welcome, " +profile.name:"",
           style: { color: "#fff" },
         }}
         containerStyle={{ width: "100%", height: 200 }}

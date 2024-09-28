@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, Alert } from "react-native";
+import { StyleSheet, View, Button, Alert } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import {
@@ -8,6 +8,10 @@ import {
 } from "react-navigation-header-buttons";
 import MaterialIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import AppLogo from "../components/AppLogo";
+import { useAppDispatch, useAppSelector } from "../redux-toolkit/hooks";
+import { logout } from "../services/auth-service";
+import { selectAuthState, setIsLoading, setIsLogin } from "../auth/auth-slice";
+import { Text } from "@rneui/base"; // use Text component from react native base
 
 const MaterialHeaderButton = (props: any) => (
   <HeaderButton IconComponent={MaterialIcon} iconSize={23} {...props} />
@@ -15,6 +19,8 @@ const MaterialHeaderButton = (props: any) => (
 
 const HomeScreen = (): React.JSX.Element => {
   const navigation = useNavigation<any>();
+  const dispatch = useAppDispatch();
+  const { profile }= useAppSelector(selectAuthState);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -37,8 +43,9 @@ const HomeScreen = (): React.JSX.Element => {
           <Item
             title="logout"
             iconName="logout"
-            onPress={() => {
-              Alert.alert("Log out", "Close Menu");
+            onPress={async () => {
+              await logout();
+              dispatch(setIsLogin(false));
             }}
           />
         </HeaderButtons>
@@ -52,11 +59,17 @@ const HomeScreen = (): React.JSX.Element => {
       companyID: 100,
     });
   };
-
   return (
     <View style={styles.container}>
       <MaterialIcon name="home" size={40} color="#A7C7E7" />
-      <Text style={styles.header}>HomeScreen</Text>
+      {profile ? (
+        <>
+          <Text h3>Welcome {profile.name}</Text>
+          <Text style={{paddingBottom:5}}>
+            Email: {profile.email} ID: {profile.id} Role: {profile.role}
+          </Text>
+        </>
+      ) : <Text>Test</Text>}
       <Button title="ABOUT US" onPress={goToAbout} />
     </View>
   );
