@@ -178,7 +178,7 @@ const App = (): React.JSX.Element => {
 
   useFocusEffect(
     React.useCallback(() => {
-      checkLogin;
+      checkLogin();
     }, [])
   );
 

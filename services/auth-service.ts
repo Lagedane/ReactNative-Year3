@@ -30,5 +30,7 @@ export async function getProfile() {
   const res = await http("https://api.codingthailand.com/api/profile", {
     headers: { "Authorization": "Bearer " +token.access_token },
   });
+  console.log(res.data);
+  
   return res;
 }
